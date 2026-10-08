@@ -75,6 +75,20 @@ Customer churn is one of the most critical business problems in the telecom indu
 
 ---
 
+## Visualizations
+
+### Churn Rate by Contract and Internet Service
+Month-to-month and fiber optic customers show the highest churn rates (above 40%).
+
+![Churn by Contract and Internet Service](churn_by_contract_internet.png)
+
+### Tenure Distribution
+A large share of customers are in their first months, the segment with the highest churn risk.
+
+![Tenure Distribution](tenure_distribution.png)
+
+---
+
 ## Key Business Insights
 
 **1. Contract type is the strongest churn predictor**
