@@ -15,15 +15,10 @@ Customer churn is one of the most critical business problems in the telecom indu
 ## Project Structure
 
 ```
-├── notebooks/
-│   ├── BigDataProject-Part-A.ipynb   # EDA, feature engineering, model training
-│   └── BigDataProject-Part-B.ipynb   # MongoDB pipeline + churn prediction
-├── data/
-│   ├── churn.csv                      # Original dataset (7,043 customers)
-│   └── Part-B-Churn-Prediction.csv    # Final predictions (24,218 customers)
-├── presentation/
-│   └── Presentation-BigData.ppsx      # Project presentation with business insights
-└── README.md
+   ├── BigDataProject-Part-A.ipynb   # EDA, feature engineering, model training
+   ├── BigDataProject-Part-B.ipynb   # MongoDB pipeline + churn prediction
+   ├── Presentation-BigData.ppsx     # Project presentation with business insights
+   └── README.md
 ```
 
 ---
