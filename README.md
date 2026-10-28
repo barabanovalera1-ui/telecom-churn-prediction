@@ -15,17 +15,34 @@ Customer churn is one of the most critical business problems in the telecom indu
 ## Project Structure
 
 ```
-   ├── BigDataProject-Part-A.ipynb   # EDA, feature engineering, model training
-   ├── BigDataProject-Part-B.ipynb   # MongoDB pipeline + churn prediction
-   ├── Presentation-BigData.ppsx     # Project presentation with business insights
-   └── README.md
+├── data/
+│   ├── churn.csv                    # IBM Telco Customer Churn dataset (input for Part A)
+│   └── churn-Part-A.csv             # Encoded training data (output of Part A, input for Part B)
+├── BigDataProject-Part-A.ipynb      # EDA, feature engineering, model training
+├── BigDataProject-Part-B.ipynb      # MongoDB pipeline + churn prediction
+├── Presentation-BigData.ppsx        # Project presentation with business insights
+├── churn_by_contract_internet.png
+├── tenure_distribution.png
+├── requirements.txt
+└── README.md
 ```
+
+## How to Run
+
+```bash
+pip install -r requirements.txt
+jupyter notebook
+```
+
+1. Run `BigDataProject-Part-A.ipynb` — reads `data/churn.csv` and writes `data/churn-Part-A.csv`
+2. Part B requires a local MongoDB (`mongodb://localhost:27017/`) with the `Tech.Customers` collection 
+   (the 25,000-document collection is not included in this repo)
 
 ---
 
 ## Part A — EDA, Feature Engineering & Model Training
 
-**Dataset:** 7,043 telecom customers with 26 features including demographics, services, contract details, and billing information.
+**Dataset:** 7,043 telecom customers with 19 features (plus customer ID and the churn label) covering demographics, services, contract details, and billing information. After encoding, the model uses 26 numeric features.
 
 ### Key Steps
 
@@ -45,12 +62,12 @@ Customer churn is one of the most critical business problems in the telecom indu
 
 | Model | Test Accuracy |
 |---|---|
-| Benchmark (majority class) | ~73% |
+| Benchmark (majority class) | ~74% |
 | Decision Tree | ~79% |
 | Random Forest | ~79% |
 | KNN | ~78% |
 
-**Winner:** Random Forest (`n_estimators=9`, `max_depth=7`) — best test accuracy with lowest overfitting gap.
+**Winner:** Random Forest (`n_estimators=9`, `max_depth=7`) — best test accuracy (79.3%) with a small train–test gap (2.6 pp).
 
 ---
 
