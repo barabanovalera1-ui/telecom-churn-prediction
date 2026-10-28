@@ -60,14 +60,17 @@ jupyter notebook
 
 **Models Trained & Compared**
 
-| Model | Test Accuracy |
-|---|---|
-| Benchmark (majority class) | ~74% |
-| Decision Tree | ~79% |
-| Random Forest | ~79% |
-| KNN | ~78% |
+| Model | Test Accuracy | Recall (churners) |
+|---|---|---|
+| Benchmark (majority class) | ~74% | 0% |
+| Decision Tree | ~78% | — |
+| Random Forest | ~79% | ~48% |
+| KNN | ~77% | — |
+| Random Forest, `class_weight='balanced'` | ~74% | **~76%** |
 
-**Winner:** Random Forest (`n_estimators=9`, `max_depth=7`) — best test accuracy (79.3%) with a small train–test gap (2.6 pp).
+**Winner on accuracy:** Random Forest (`n_estimators=9`, `max_depth=7`) — best test accuracy (79.3%) with a small train–test gap (2.6 pp).
+
+**Beyond accuracy:** with only ~26% churners, accuracy is misleading — the accuracy-optimized model catches less than half of the customers who actually leave. A balanced Random Forest raises recall to ~76% (5-fold CV recall: 79%) at the cost of more false alarms, which is usually the better trade-off for a retention campaign.
 
 ---
 
@@ -81,6 +84,7 @@ jupyter notebook
 - Flattened nested `Services` subdocuments into separate feature columns
 - Applied identical preprocessing pipeline as Part A
 - Applied trained Random Forest model to predict churn on unseen data
+- *Requires a local MongoDB — the collection is not included in this repo; prediction results below are from the original local run*
 - Exported results to CSV for business use
 
 ### Prediction Results
@@ -141,8 +145,10 @@ Based on the [IBM Telco Customer Churn dataset](https://www.kaggle.com/datasets/
 
 ---
 
-## Author
+## Authors
 
-**Valeria Barabanova**
+Team project — Technion Big Data Analyst program (TCBDA-28)
+
+**Valeria Barabanova** · **Lihi Berg**
 Junior Data Analyst | Tel Aviv, Israel
 [LinkedIn](https://linkedin.com/in/valeriabarabanova) · [GitHub](https://github.com/barabanovalera1-ui)
