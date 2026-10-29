@@ -145,10 +145,8 @@ Based on the [IBM Telco Customer Churn dataset](https://www.kaggle.com/datasets/
 
 ---
 
-## Authors
+## Author
 
-Team project — Technion Big Data Analyst program (TCBDA-28)
-
-**Valeria Barabanova** · **Lihi Berg**
+**Valeria Barabanova**
 Junior Data Analyst | Tel Aviv, Israel
 [LinkedIn](https://linkedin.com/in/valeriabarabanova) · [GitHub](https://github.com/barabanovalera1-ui)
